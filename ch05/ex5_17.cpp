@@ -6,7 +6,7 @@ using std::cout; using std::vector;
 bool is_prefix(vector<int> const& lhs, vector<int> const& rhs)
 {
     if(lhs.size() > rhs.size())
-        return is_prefix(rhs, lhs);
+        return is_prefix(rhs, lhs);                 // Ensuring the vector on the right has the largest size. 
     for(unsigned i = 0; i != lhs.size(); ++i)
         if(lhs[i] != rhs[i]) return false;
     return true;
