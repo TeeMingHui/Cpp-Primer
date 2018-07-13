@@ -40,35 +40,44 @@ int main()
 ```
 
 ## Exercise 6.4
-
 ```cpp
 #include <iostream>
+#include <cstring>
+#include <vector>
+#include <iterator>
 #include <string>
+#include <stdexcept>
 
-int fact(int i)
+using std::begin; using std::end; using std::cout; using std::endl; using std::vector;
+using std::string; using std::cin; using std::pair; 
+
+double fact ( double const& lhs)
 {
-    return i > 1 ? i * fact(i - 1) : 1;
+	return ( (lhs > 1) ? lhs * fact( lhs -1 ) : 1);
 }
 
 void interactive_fact()
 {
-    std::string const prompt = "Enter a number within [1, 13) :\n";
+	std::string const prompt = "Enter a number within [1, 20]:";
     std::string const out_of_range = "Out of range, please try again.\n";
-    for (int i; std::cout << prompt, std::cin >> i; )
+    std::string const answer = "Answer: \n";
+    for (double i; std::cout << prompt, std::cin >> i;)
     {
-        if (i < 1 || i > 12)
-        {
-            std::cout << out_of_range; 
-            continue;
-        }
-        std::cout << fact(i) << std::endl;
+    	if ( i < 1 || i > 19)
+    	{
+    		cout << out_of_range;
+    		continue;
+    	}
+    	cout << fact(i) << endl;
     }
 }
 
+
+
 int main()
 {
-    interactive_fact();
-    return 0;
+	interactive_fact();
+	return 0;
 }
 ```
 
