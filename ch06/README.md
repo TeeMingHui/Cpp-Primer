@@ -58,7 +58,7 @@ double fact ( double const& lhs)
 
 void interactive_fact()
 {
-	std::string const prompt = "Enter a number within [1, 20]:";
+    std::string const prompt = "Enter a number within [1, 20]:";
     std::string const out_of_range = "Out of range, please try again.\n";
     std::string const answer = "Answer: \n";
     for (double i; std::cout << prompt, std::cin >> i;)
