@@ -42,14 +42,6 @@ int main()
 ## Exercise 6.4
 ```cpp
 #include <iostream>
-#include <cstring>
-#include <vector>
-#include <iterator>
-#include <string>
-#include <stdexcept>
-
-using std::begin; using std::end; using std::cout; using std::endl; using std::vector;
-using std::string; using std::cin; using std::pair; 
 
 double fact ( double const& lhs)
 {
@@ -72,8 +64,6 @@ void interactive_fact()
     }
 }
 
-
-
 int main()
 {
 	interactive_fact();
@@ -86,15 +76,24 @@ int main()
 ```cpp
 #include <iostream>
 
-int abs(int i)
+double abs ( double const& lhs)
 {
-    return i > 0 ? i : -i;
+	return ( (lhs > 0) ? lhs : -lhs);
+}
+
+void interactive_abs()
+{
+    std::string const prompt = "Enter a number:";
+    for (double i; std::cout << prompt, std::cin >> i;)
+    {
+    	cout << abs(i) << endl;
+    }
 }
 
 int main()
 {
-    std::cout << abs(-5) << std::endl;
-    return 0;
+	interactive_abs();
+	return 0;
 }
 ```
 
