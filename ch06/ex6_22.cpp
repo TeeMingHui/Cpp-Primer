@@ -1,25 +1,37 @@
-// @Yue Wang
-//
-// Exercise 6.22:
-// Write a function to swap two int pointers.
-//
 #include <iostream>
+#include <cstring>
+#include <vector>
+#include <iterator>
 #include <string>
+#include <stdexcept>
 
-void swap(int*& lft, int*& rht)
+using std::begin; using std::end; using std::cout; using std::endl; using std::vector;
+using std::string; using std::cin; using std::pair; 
+
+// Refer by pointer reference?
+// https://stackoverflow.com/questions/1826203/swapping-addresses-of-pointers-in-c
+ 
+void swap(const int*& lhs, const int*& rhs)
 {
-    auto tmp = lft;
-    lft = rht;
-    rht = tmp;
+	const int *temp = lhs;
+	lhs = rhs;
+	rhs = temp;
+	return;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
-    int i = 42, j = 99;
-    auto lft = &i;
-    auto rht = &j;
-    swap(lft, rht);
-    std::cout << *lft << " " << *rht << std::endl;
+	const int value_1 = 90;
+	const int value_2 = 10;
+
+	const int *ptr1 = &value_1;
+	const int *ptr2 = &value_2;
+	cout << "Pointer_1: " << ptr1 << " Value: " << *ptr1 << endl;
+	cout << "Pointer_2: " << ptr2 << " Value: " << *ptr2 << endl;
+	swap(ptr1, ptr2);
+	cout << "Swap Some value!!" << endl;
+	cout << "Pointer_1: " << ptr1 << " Value: " << *ptr1 << endl;
+	cout << "Pointer_2: " << ptr2 << " Value: " << *ptr2 << endl;
 
     return 0;
 }
