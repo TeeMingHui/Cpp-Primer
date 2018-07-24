@@ -283,6 +283,8 @@ private:
 
 illegal, cause there are ten elements, each would be default initialized. But no default initializer for the temporary object.
 
+It is illegal, the constructor of vector taken a single number will call the default constructor of elements to value initialze its elements, but the class of the elements NoDefault does not have a default constructor, thus the code will not compile.
+
 ## Exercise 7.45
 
 No problem. cause `C` have the default constructor.
