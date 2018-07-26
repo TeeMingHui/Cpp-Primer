@@ -144,6 +144,24 @@ size_t generate()
 `void f(T)` pass the argument by value. **nothing the function does to the parameter can affect the argument**.
 `void f(T&)` pass a reference, will be **bound to** whatever T object we pass.
 
+`void f(T)` 
+- Argument pass though the value being copy
+- Changes in F done on T wont be reflected.
+- Advantage:
+	Isolation.
+- Disadvantage:
+	Addtional copies of the item
+	Some class types(eg IO) cannot be copied
+	
+`void f(T&)`
+- Argument pass through the object to the reference
+- Changes in F done over T would be updated.
+- Advantage:
+	Single copies of the item 
+	Work well with majority of the class type.
+- Disadvantage:
+	unintentional changes might occur.
+
 ## Exercise 6.14
 
 a parameter should be a reference type:
