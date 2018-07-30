@@ -1,21 +1,25 @@
-#include <iostream>
 #include <vector>
-using std::vector; using std::cout;
-using Iter = vector<int>::const_iterator;
+#include <iostream>
 
-void print(Iter first, Iter last)
+void print(const std::vector<int>::iterator &bg, const std::vector<int>::iterator &ed)
 {
-    if (first != last)
-    {
-        cout << *first << " ";
-        print(++first, last);
-    }
+	if (bg == ed)
+	{
+		std::cout << std::endl;
+		return;
+	}
+	else
+	{
+		std::cout << *bg  << " ";
+		print(bg+1, ed);
+	}
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
-    vector<int> vec{ 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-    print(vec.cbegin(), vec.cend());
-
-    return 0;
+	std::vector<int> myvector;
+	for (int i=1; i<=20; i++)
+		 myvector.push_back(i);
+	print(myvector.begin(), myvector.end());	
+	return 0;
 }
