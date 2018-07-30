@@ -1,12 +1,4 @@
 #include <iostream>
-#include <cstring>
-#include <vector>
-#include <iterator>
-#include <string>
-#include <stdexcept>
-
-using std::begin; using std::end; using std::cout; using std::endl; using std::vector;
-using std::string; using std::cin; using std::pair; 
 
 // Refer by pointer reference?
 // https://stackoverflow.com/questions/1826203/swapping-addresses-of-pointers-in-c
@@ -34,4 +26,34 @@ int main(int argc, char const *argv[])
 	cout << "Pointer_2: " << ptr2 << " Value: " << *ptr2 << endl;
 
     return 0;
+}
+
+// Alternative ? Swap by Value.
+
+void swap(int* lhs, int* rhs)
+{
+	int temp = *rhs;
+	*rhs  = *lhs;
+	*lhs = temp;
+}
+
+int main(int argc, char const *argv[])
+{
+	int value_1 = 10;
+	int value_2 = 20;
+
+	int *pointer_1 = &value_1;
+	int *pointer_2 = &value_2;
+
+	std::cout << "Before Swap " << std::endl;
+	std::cout << "value_1: "	<< value_1 	<< std::endl;
+	std::cout << "value_2: "	<< value_2 	<< std::endl;
+	
+	swap(pointer_1,pointer_2);
+
+	std::cout << "After Swap " << std::endl;
+	std::cout << "value_1: "	<< value_1 	<< std::endl;
+	std::cout << "value_2: "	<< value_2 	<< std::endl;
+	
+	return 0;
 }
