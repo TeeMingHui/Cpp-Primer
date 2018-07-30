@@ -4,8 +4,9 @@
 // To deference its memory address, use "&"
 // Example *int x = &I;
 // The other side need to follow the convention. 
+// The Argument below changed into constant: NO Changes required to the value.
 
-int isLarger(int lhs, const int *const rhs)
+int isLarger(const int lhs, const int *const rhs)
 {
 	return ( ( lhs > *rhs ) ? lhs : *rhs ); 
 }
