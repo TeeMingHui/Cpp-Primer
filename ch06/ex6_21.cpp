@@ -1,29 +1,23 @@
 #include <iostream>
-#include <cstring>
-#include <vector>
-#include <iterator>
-#include <string>
-#include <stdexcept>
 
-using std::begin; using std::end; using std::cout; using std::endl; using std::vector;
-using std::string; using std::cin; using std::pair; 
-
- 
-// For Pointer, it "Points" to the address. With that, have to provide it address! They come in pair, so int *p = &I
+// A pointer is the memory address of an object
+// To deference its memory address, use "&"
+// Example *int x = &I;
 // The other side need to follow the convention. 
 
-int larger(const int lhs, const int *const rhs)
+int isLarger(int lhs, const int *const rhs)
 {
-	return ( ( lhs > *rhs) ? lhs : *rhs);
+	return ( ( lhs > *rhs ) ? lhs : *rhs ); 
 }
 
 int main(int argc, char const *argv[])
 {
+	int star  = 999999;
 	int value = 9;
-	const int p = 9;
-	cout << "P without *" << p << endl;
-	cout << "90 vs P: " << larger(90, &p) << endl;
-	cout << "01 vs P: " << larger(1, &p) << endl;
-
+	int *p    = &value;	
+	std::cout << "90 vs P: " << isLarger(90, p) << std::endl;
+	std::cout << "01 vs P: " << isLarger(1, p) << std::endl;
+	// To illustrate pointer memory location
+	std::cout << "value vs &star: " << isLarger(value, &star) << std::endl;
 	return 0;
 }
