@@ -327,6 +327,28 @@ decltype(arrStr)& arrPtr(int i)
 {
           return (i % 2) ? odd : even;
 }
+
+#include <string>
+#include <iostream>
+
+int sample[] = {1,2,3,4,5,6,7,8,9,10};
+
+
+decltype(sample) &returnFunction(int (&lhs)[10],int (&rhs)[10])
+{
+	return lhs;
+}
+
+int main(int argc, char const *argv[])
+{
+	int x[] = {1,2,3,4,5,6,7,8,9,10};
+	int(&arr)[10] = returnFunction(x,x);
+	for (int i = 0; i != 10; ++i)
+		std::cout << arr[i] << " ";
+	std::cout << std::endl;
+	return 0;
+}
+
 ```
 
 ## Exercise 6.39
