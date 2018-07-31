@@ -351,8 +351,34 @@ int main(int argc, char const *argv[])
 
 ```
 
-## Exercise 6.39
+## Exercise 6.39(Function Overload with Argument)
+```cpp 
+#include <string>
+#include <iostream>
 
+int &rRef (int &lhs)
+{
+	std::cout << "Function 1" << std::endl;
+	return lhs;
+}
+
+const int &rRef (const int &lhs)
+{
+	std::cout << "Function 2" << std::endl;
+	return lhs;
+}
+
+
+
+int main(int argc, char const *argv[])
+{
+	int x = 90;
+	const int y = 90;
+	int &z = rRef(x);
+	const int &q = rRef(y);
+	return 0;
+}
+```
 (a) legal, repeated declarations(without definition) are legal in C++
 
 (b) illegal, only the return type is different
