@@ -292,7 +292,9 @@ the recursive function will always use `val` as the parameter. *a recursion loop
 ## Exercise 6.36
 
 ```cpp
-string (&func(string (&arrStr)[10]))[10]
+// Agruement : Reference of 10 string Array(Noting typically agurement is same type as return)
+
+std::string (&refReturn(std::string (&sArray)[10]))[10]
 ```
 
 ## Exercise 6.37
