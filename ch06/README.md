@@ -307,6 +307,16 @@ auto func2(ArrT& arr) -> string(&)[10];
 
 string arrS[10];
 decltype(arrS)& func3(ArrT& arr);
+
+
+typedef std::string sString[10];
+using sString = std::string[10];
+sString& rFunction(sString)
+
+auto funcString(std::string (&lhs)[10]) -> std::string(&)[10]
+
+decltype(std::string lhs[10]) &stringRef(std::string (&lhs)[10])
+
 ```
 
 I pefer the first one. because it is more simpler to me.
