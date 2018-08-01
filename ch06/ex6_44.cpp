@@ -3,16 +3,14 @@
 // Exercise 6.44: Rewrite the isShorter function from § 6.2.2 (p. 211) to be inline.
 //
 #include <iostream>
-#include <string>
-using std::string; using std::cout; using std::endl;
 
-inline bool is_shorter(const string &lft, const string &rht) // defining in the header more better.
+inline const std::string &isShorter(const std::string &lhs, const std::string &rhs) 
 {
-    return lft.size() < rht.size();
+    return (lhs < rhs) ? lhs : rhs; 
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
-    cout << is_shorter("pezy", "mooophy") << endl;
-    return 0;
+	std::cout << "Shorter Version: " << isShorter("Ming Hui", "Scott Jones") << std::endl;
+	return 0;
 }
